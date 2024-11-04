@@ -1,0 +1,139 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling the Body */
+body {
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar Styling */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent; /* Initially transparent */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+.logo h1 {
+  color: rgb(10, 9, 9);
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.5s ease;
+  font-weight: bold;
+  text-shadow: #282c34;
+}
+
+#navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+#navbar ul li {
+  margin-left: 20px;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: rgb(7, 7, 7);
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s; /* Smooth hover effect */
+  border-radius: 5px;
+}
+
+/* Hover effect for menu items */
+#navbar ul li a:hover {
+  background-color: rgba(88, 72, 72, 0.2);
+  color: #ce6ac5; /* Custom color when hovered */
+}
+
+/* When the navbar is scrolled, change background */
+.scrolled {
+  background-color: rgba(92, 140, 236, 0.9); /* Solid background after scrolling */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(144, 9, 188, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Content Sections */
+.content {
+  padding: 80px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  /* Hide the menu in mobile by default */
+  #navbar ul {
+    display: none;
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 70px; /* Below the navbar */
+    right: 0;
+    background-color: rgba(40, 44, 52, 0.9);
+    width: 100%;
+    text-align: center;
+  }
+
+  #navbar ul.show-menu {
+    display: flex; /* Show menu when the class is toggled */
+  }
+
+  #navbar ul li {
+    margin: 15px 0;
+  }
+
+  #navbar ul li a {
+    padding: 10px 0;
+  }
+
+  /* Display hamburger menu icon in mobile view */
+  .menu-icon {
+    display: block; /* Show the icon */
+  }
+}
